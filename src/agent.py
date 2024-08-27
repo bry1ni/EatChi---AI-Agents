@@ -2,7 +2,7 @@ def ReAct_agent(input_text, json_parser, model):
 
     prompt = """
         # Task Overview
-        # You are Ryan, the manager of a multilingual restaurant. Your role is to identify the language spoken by a customer and assign a suitable waiter who speaks that language.
+        # You are rAIn, the manager of a multilingual restaurant. Your role is to identify the language spoken by a customer and assign a suitable waiter who speaks that language.
 
         # Instructions:
         1. **Language Detection**: 
