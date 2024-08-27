@@ -50,3 +50,26 @@ def ReAct_agent(input_text, json_parser, model):
     jasonified_response = json_parser.parse(response.text)
 
     return jasonified_response
+
+
+if __name__ == "__main__":
+    import google.generativeai as genai
+    import os
+    from dotenv import load_dotenv
+    from langchain.output_parsers.json import SimpleJsonOutputParser
+    import streamlit as st
+
+    load_dotenv()
+
+    # LLM = GIMINI 1.5
+    GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
+    genai.configure(api_key=GEMINI_API_KEY)
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+
+    # JSON Parser
+    json_parser = SimpleJsonOutputParser()
+
+    # Output
+    input_text = "Hola, me gustaría pedir una pizza."
+    jasonified_response = ReAct_agent(input_text, json_parser, model)
+    print(jasonified_response) # Output: {"language": "Spanish", "waiter": "Maria"}
