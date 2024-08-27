@@ -1,4 +1,4 @@
-def ReAct_agent(input_text, json_parser, model):
+def rAIn(input_text, json_parser, model):
 
     prompt = """
         # Task Overview
@@ -71,5 +71,5 @@ if __name__ == "__main__":
 
     # Output
     input_text = "Hola, me gustaría pedir una pizza."
-    jasonified_response = ReAct_agent(input_text, json_parser, model)
+    jasonified_response = rAIn(input_text, json_parser, model)
     print(jasonified_response) # Output: {"language": "Spanish", "waiter": "Maria"}
